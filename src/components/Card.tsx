@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface EmployeeCardProps {
   id: string;
@@ -22,7 +22,7 @@ const EmployeeCard: React.FC<EmployeeCardProps> = ({
   toggleSelectEmployee,
   individualDeleteHandler,
   clickHandler,
-  
+
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -42,7 +42,7 @@ const EmployeeCard: React.FC<EmployeeCardProps> = ({
               type="checkbox"
               className="w-5 h-5"
               checked={isSelected}
-              onChange={() => toggleSelectEmployee(id)}
+              onChange={() => toggleSelectEmployee && toggleSelectEmployee(id)}
             />
           </div>
         )}
@@ -54,20 +54,20 @@ const EmployeeCard: React.FC<EmployeeCardProps> = ({
         <p className="text-lg text-gray-700">Salary: ${salary}</p>
       </div>
 
-        <div className="absolute bottom-4 right-4 flex space-x-2">
-          <button
-            className="bg-blue-500 text-white px-3 py-1 rounded-lg"
-            onClick={() => console.log(`Edit ${id}`)}
-          >
-            Edit
-          </button>
-          <button
-            className="bg-red-500 text-white px-3 py-1 rounded-lg"
-            onClick={() => individualDeleteHandler(id)}
-          >
-            Delete
-          </button>
-        </div>
+      <div className="absolute bottom-4 right-4 flex space-x-2">
+        <button
+          className="bg-blue-500 text-white px-3 py-1 rounded-lg"
+          onClick={() => console.log(`Edit ${id}`)}
+        >
+          Edit
+        </button>
+        <button
+          className="bg-red-500 text-white px-3 py-1 rounded-lg"
+          onClick={() => individualDeleteHandler && individualDeleteHandler(id)}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   );
 };

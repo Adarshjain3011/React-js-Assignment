@@ -1,6 +1,4 @@
-// src/NoResultsFound.tsx
 
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface NoResultsFoundProps {

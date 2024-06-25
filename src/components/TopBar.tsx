@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { CgSearch } from "react-icons/cg";
 
 interface TopBarProps {
     cardDeleteHandler: () => void;
